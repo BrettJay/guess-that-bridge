@@ -17,3 +17,7 @@ sample_question = Question.create!(title: 'What is this bridge?', answer: 'The e
 
 # Create a GameUser association
 sample_game_user = GameUser.create!(game: sample_game, user: sample_user)
+
+Guess.create!(question: sample_question, game_user: sample_game_user, body: 'The Sydney Opera House', correct: false )
+Guess.create!(question: sample_question, game_user: sample_game_user, body: 'Ularu', correct: false )
+Guess.create!(question: sample_question, game_user: sample_game_user, body: 'The empire state building', correct: true )
