@@ -10,11 +10,11 @@
     <%= link_to "New game", new_admin_game_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <div id="admin_games" class="min-w-full">
-    <% @admin_games.each do |admin_game| %>
-      <%= render admin_game %>
+  <div id="games" class="min-w-full">
+    <% @games.each do |game| %>
+      <%= render game %>
       <p>
-        <%= link_to "Show this game", admin_game, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+        <%= link_to "Show this game", [:admin, game], class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
       </p>
     <% end %>
   </div>

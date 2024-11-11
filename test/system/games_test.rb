@@ -1,17 +1,17 @@
 require "application_system_test_case"
 
-class Admin::GamesTest < ApplicationSystemTestCase
+class GamesTest < ApplicationSystemTestCase
   setup do
-    @admin_game = admin_games(:one)
+    @game = games(:one)
   end
 
   test "visiting the index" do
-    visit admin_games_url
+    visit games_url
     assert_selector "h1", text: "Games"
   end
 
   test "should create game" do
-    visit admin_games_url
+    visit games_url
     click_on "New game"
 
     click_on "Create Game"
@@ -21,7 +21,7 @@ class Admin::GamesTest < ApplicationSystemTestCase
   end
 
   test "should update Game" do
-    visit admin_game_url(@admin_game)
+    visit game_url(@game)
     click_on "Edit this game", match: :first
 
     click_on "Update Game"
@@ -31,7 +31,7 @@ class Admin::GamesTest < ApplicationSystemTestCase
   end
 
   test "should destroy Game" do
-    visit admin_game_url(@admin_game)
+    visit game_url(@game)
     click_on "Destroy this game", match: :first
 
     assert_text "Game was successfully destroyed"

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :games
+  end
   resource :session
   resources :passwords, param: :token
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -14,9 +17,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "passwords#edit"
 
-  namespace :admin do
-    resources :games
-  end
 
   resources :games
 end
