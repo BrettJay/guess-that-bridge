@@ -2,14 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
 @layer components {
-  .field {
-    @apply py-6;
-  }
-  .field label {
-    @apply block;
-  }
-  .field input {
-    @apply rounded-md block w-full;
-  }
 }
+*/
