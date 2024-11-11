@@ -13,4 +13,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "passwords#edit"
+
+  namespace :admin do
+    resources :games
+  end
+
+  resources :games
 end
