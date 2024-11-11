@@ -6,6 +6,19 @@
 
     <%= render @game %>
 
+    <p>
+      <strong class="block font-medium mb-1">Questions:</strong>
+      <% if @game.questions.empty? %>
+        <em>No questions added yet</em>
+      <% else %>
+        <ol class='rounded shadow overflow-hidden ring-black/10 ring-1'>
+          <%- @game.questions.each do | question | %>
+            <li class='px-4 py-2 bg-white'><%= question.title %></li>
+          <% end %>
+        </ol>
+      <% end %>
+    </p>
+
     <%= link_to "Edit this game", edit_admin_game_path(@game), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to "Back to games", admin_games_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <div class="inline-block ml-2">
