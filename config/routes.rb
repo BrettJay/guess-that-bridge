@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   namespace :admin do
-    resources :games
+    namespace :games do
+      resources :questions
+    end
+    resources :games do
+      resources :questions, module: :games
+    end 
   end
   resource :session
   resources :passwords, param: :token
@@ -16,7 +21,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "passwords#edit"
-
 
   resources :games
 end
