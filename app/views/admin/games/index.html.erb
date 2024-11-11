@@ -10,11 +10,15 @@
     <%= link_to "New game", new_admin_game_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <ol id="games" class="min-w-full">
+  <div id="games" class="min-w-full rounded-lg my-4 shadow overflow-hidden ring-black/10 ring-1">
+    <div class='grid grid-cols-3 text-sm gap-px bg-slate-100 font-semibold'>
+      <div class='col-span-2 px-4 py-2'>Title</div>
+      <div class='px-4 py-2'>Questions</div>
+    </div>
     <% @games.each do |game| %>
       <%= link_to [:admin, game] do %>
         <%= render game %>
       <% end %>
     <% end %>
-  </ol>
+  </div>
 </div>
