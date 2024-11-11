@@ -2,7 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-@layer components {
+html {
+  @apply antialiased;
+  text-rendering: optimizeLegibility;
 }
-*/
+
+@layer components {
+  .admin-breadcrumbs a {
+    @apply px-2 hover:bg-slate-200 py-1.5 rounded-md;
+  }
+  .admin-breadcrumbs li:not(:has(a)):before{
+    @apply pr-2;
+  }
+}
