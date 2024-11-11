@@ -17,7 +17,7 @@ class Admin::GamesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create game" do
     assert_difference("Game.count") do
-      post admin_games_url, params: { game: {} }
+      post admin_games_url, params: { game: { title: @game.title } }
     end
 
     assert_redirected_to admin_game_url(Game.last)
@@ -34,7 +34,7 @@ class Admin::GamesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update game" do
-    patch admin_game_url(@game), params: { game: {} }
+    patch admin_game_url(@game), params: { game: { title: @game.title } }
     assert_redirected_to admin_game_url(@game)
   end
 

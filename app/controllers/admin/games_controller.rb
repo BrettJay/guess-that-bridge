@@ -65,6 +65,6 @@ class Admin::GamesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def game_params
-      params.fetch(:game, [:title])
+      params.expect(game: [ :title ])
     end
 end
