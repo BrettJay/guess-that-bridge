@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
   namespace :admin do
-    namespace :games do
-      resources :questions
-    end
     resources :games do
       resources :questions, module: :games
     end 
