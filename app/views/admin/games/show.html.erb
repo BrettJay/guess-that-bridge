@@ -13,10 +13,11 @@
   <% if @game.questions.empty? %>
     <em>No questions added yet</em>
   <% else %>
-    <ol class='rounded shadow overflow-hidden ring-black/10 ring-1'>
+    <ol class='rounded shadow overflow-hidden bg-slate-100 grid grid-cols-1 gap-px ring-black/10 ring-1'>
       <%- @game.questions.each do | question | %>
         <li class='px-4 py-2 bg-white'><%= question.title %></li>
       <% end %>
+        <li class='px-4 py-2 bg-white'><%= link_to '+ New question', new_admin_game_question_path(@game) %></li>
     </ol>
   <% end %>
   </p>
