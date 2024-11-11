@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :admin do
     resources :games do
-      resources :questions, module: :games
+      resources :questions, module: :games, only: [:new, :create]
     end 
   end
   resource :session
