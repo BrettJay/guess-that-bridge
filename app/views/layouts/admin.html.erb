@@ -24,6 +24,16 @@
   </head>
 
   <body>
-    <%= yield %>
+    <main class='min-h-screen bg-slate-100'>
+      <nav class='p-2 border-b border-slate-200 flex justify-between items-center'>
+        <ol>
+          <li>Guess that Bridge</li>
+        </ol>
+        <%= button_to "Sign out", session_path, method: :delete, class: "px-4 py-2 text-sm rounded font-medium hover:bg-gray-50" %>
+      </nav>
+      <div class='p-2'>
+        <%= yield %>
+      </div>
+    </main>
   </body>
 </html>

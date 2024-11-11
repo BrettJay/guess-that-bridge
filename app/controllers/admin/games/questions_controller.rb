@@ -1,4 +1,4 @@
-class Admin::Games::QuestionsController < ApplicationController
+class Admin::Games::QuestionsController < Admin::BaseController
   def new
   end
 
